@@ -11,7 +11,7 @@ import Card from "../Card/Card"
 export default function App() {
   const url = `https://codepath-store-api.herokuapp.com/store`;
   const [data, setData] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("All Categories");
+  const [selectedCategory, setSelectedCategory] = useState("Tech");
 
   async function fetchProducts(){
     //console.log("Fetching products")
@@ -54,7 +54,7 @@ export default function App() {
           <div className="content">
           
           <Home></Home>
-          <Navbar category={selectedCategory}>
+          <Navbar category={selectedCategory} click={setSelectedCategory}>
 
           </Navbar>
           <div className="grid-container">
