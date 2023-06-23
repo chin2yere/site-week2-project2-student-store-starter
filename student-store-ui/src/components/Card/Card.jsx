@@ -1,7 +1,11 @@
+//import IncrementBtn from "../IncrementBtn/IncrementBtn";
+import * as React from "react"
 import "./Card.css"
+import IncrementBtn from "../IncrementBtn/IncrementBtn"
 
-export function Card({ name, image, price }) {
-    let quant;
+export function Card({ name, image, price,}) {
+    
+    
     return (
       <div className="card">
         <img src={image} style={{ width: '100%', height:"250px" }} />
@@ -23,21 +27,20 @@ export function Card({ name, image, price }) {
             <p>${price}</p>
           </div>
           <div className="rightcol">
-            <div className="row">
-                <button className="button-card">
+            {/* <div className="row">
+                <button onClick={() => quantity(numberOfProducts+1)}className="button-card">
                     <i class="material-icons">add</i>
 
                 </button>
-                <button className="button-card">
+                <button onClick={(a=no-1) => quantity(numberOfProducts-1)}className="button-card">
                     <i class="material-icons">remove</i>
 
                 </button>
 
-            </div>
+            </div> */}
+            <IncrementBtn/> 
             
-            
-            
-            <p>{quant}</p>
+                
           </div>
         </div>
       </div>

@@ -6,12 +6,14 @@ import Home from "../Home/Home"
 import "./App.css"
 import { useEffect, useState } from "react"
 import Card from "../Card/Card"
-// import { Dataset } from "../../data/dataset"
+import Search from "../Search/Search"
+
 
 export default function App() {
   const url = `https://codepath-store-api.herokuapp.com/store`;
   const [data, setData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
+  
   let allCategories = true;
   let parsedData;
 
@@ -86,6 +88,8 @@ export default function App() {
               name={d.name} 
               image={d.image} 
               price={d.price}
+              
+              
               
          />)
          
