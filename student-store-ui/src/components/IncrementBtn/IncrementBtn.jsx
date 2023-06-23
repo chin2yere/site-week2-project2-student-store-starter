@@ -17,11 +17,11 @@ function selectedIncrementValue(){
     <div className="incrementBtn">
       <div className="row">
                 <button onClick={() => setSelectedIncrement(selectedIncrement+1)}className="button-card">
-                    <i class="material-icons">add</i>
+                    <i className="material-icons">add</i>
 
                 </button>
                 <button onClick={() => setSelectedIncrement(selectedIncrement-1)}className="button-card">
-                    <i class="material-icons">remove</i>
+                    <i className="material-icons">remove</i>
 
                 </button>
 

@@ -13,50 +13,92 @@ export default function App() {
   const url = `https://codepath-store-api.herokuapp.com/store`;
   const [data, setData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
-  
+  const [searchText, setSearchText] = useState("");
+  const [parsedData, setParsedData] = useState([]);
+  //const [parsedData, setParsedData] = useState(null);
   let allCategories = true;
-  let parsedData;
+  //let parsedData;
 
-  async function fetchProducts(){
+  async function fetchProducts() {
     //console.log("Fetching products")
     const response = await fetch(url);
     let existingData = await response.json();
     existingData = existingData.products;
     setData(existingData);
+    setParsedData(existingData);
     //images = data.results;
-    console.log(existingData);
-    
-    
-      
-    
-    
+    //console.log(existingData);
   }
   // const { data, name, category, price, image } = Dataset.createDataSet();
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchProducts();
     // category.map((category)=>{
     //   <p>category</p>
     // })
 
-  },[])
+  }, [])
+  function setParsedDataFunction(categoryClicked){
+    const currentProductItems = data.filter((data) => {
+      if (data.category === categoryClicked) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+    // //console.log(currentProductItems);
   
-  const currentProductItems = data.filter ((data)=>{
-    if (data.category=== selectedCategory){
-      return true;
-     }else{
-      return false;
-     }
-  })
-  console.log(currentProductItems);
+    if (categoryClicked === "All Categories") {
+      allCategories = true;
+      //parsedData= data;
+      setParsedData(data);
+    } else {
+      allCategories = false;
+      //parsedData = currentProductItems;
+      setParsedData(currentProductItems);
+    }
+    setSelectedCategory(categoryClicked);
+  
 
-  if(selectedCategory === "All Categories"){
-    allCategories = true;
-    parsedData = data;
-  }else{
-    allCategories = false;
-    parsedData = currentProductItems;
   }
+
+  
+  // function click(categoryClicked) {
+  //   setParsedDataFunction(categoryClicked);
+  //   //setSelectedCategory(x);
+    
+
+  // }
+
+  function runProductSearch() {
+    //console.log("run product search");
+    if (searchText != ("")) {
+      //console.log("search text is not empty");
+      const newData = parsedData.filter((data) => {
+        //console.log({data,"condition: ":data.name.includes(searchText)});
+        if (data.name.toLowerCase().includes(searchText)) {
+          return true;
+        } else {
+          return false;
+        }
+
+
+        //return item.name.toLowerCase().includes({searchText});
+      })
+      console.log(parsedData);
+      setParsedData(newData);
+
+    }
+    //console.log("end of run product search",searchText);
+
+
+
+
+  }
+  //console.log("outside function",searchText);
+  console.log(parsedData);
+
+  
 
 
   return (
@@ -65,36 +107,34 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <div>
-          <Sidebar>
-
-          </Sidebar>
+            <Sidebar />
 
           </div>
           <div className="content">
-          
-          <Home></Home>
-          <Navbar category={selectedCategory} click={setSelectedCategory}>
 
-          </Navbar>
-          <div className="grid-container">
-            
+            <Home />
+            <Search text={searchText} updateText={setSearchText} runSearch={runProductSearch}/>
+
+            <Navbar category={selectedCategory} click={setParsedDataFunction} />
+
+            <div className="grid-container">
 
 
 
-          {parsedData.map((d)=>{
-            
-       
-            return (<Card key={d.name}
-              name={d.name} 
-              image={d.image} 
-              price={d.price}
-              
-              
-              
-         />)
-         
-})}
-          </div>
+              {parsedData.map((d) => {
+
+
+                return (<Card key={d.name}
+                  name={d.name}
+                  image={d.image}
+                  price={d.price}
+
+
+
+                />)
+
+              })}
+            </div>
           </div>
         </main>
       </BrowserRouter>

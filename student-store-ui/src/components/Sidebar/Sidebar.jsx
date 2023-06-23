@@ -6,7 +6,7 @@ export default function Sidebar() {
     <section className="sidebar">
       <div className="borderless-button">
         <button className="icon">
-          <i class="material-icons md-48">arrow_forward</i>
+          <i className="material-icons md-48">arrow_forward</i>
         </button>
         <br></br>
         <br></br>
@@ -18,17 +18,17 @@ export default function Sidebar() {
       
       <div className="borderless-button">
         <button className="icon">
-          <i class="material-icons md-48">add_shopping_cart</i>
+          <i className="material-icons md-48">add_shopping_cart</i>
         </button>
         <br></br>
         <br></br>
         <button className="icon">
-          <i class="material-icons md-48">monetization_on</i>
+          <i className="material-icons md-48">monetization_on</i>
         </button>
         <br></br>
         <br></br>
         <button className="icon">
-          <i class="material-icons md-48">fact_check</i>
+          <i className="material-icons md-48">fact_check</i>
         </button>
 
       </div>

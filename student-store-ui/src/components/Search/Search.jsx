@@ -1,12 +1,33 @@
 import * as React from "react"
 import "./Search.css"
 //import { useState } from "react"
-export default function Search() {
+export default function Search({text,updateText, runSearch}) {
   
 //const [selectedIncrement, setSelectedIncrement] = useState(0);
 
 
   return (
-    <p>j</p>
+    <div className="search">
+        <input
+        type="text"
+        placeholder="type here"
+        value={text}
+        onChange={(e) =>updateText(e.target.value)}
+        
+        
+        />
+        <button onClick={runSearch}>
+            Search
+        </button>
+        <button>
+            Close
+        </button>
+
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+    </div>
+    
   )
 }

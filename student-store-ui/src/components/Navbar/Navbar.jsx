@@ -29,7 +29,7 @@ export default function Navbar({category, click}) {
       
         <div className="hamburger">
         <ul>
-        <li><button><i class="material-icons">menu</i></button></li>
+        <li><button><i className="material-icons">menu</i></button></li>
         </ul>
         </div>
 
