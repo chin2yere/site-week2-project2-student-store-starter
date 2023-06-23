@@ -1,5 +1,5 @@
 import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
+//import { BrowserRouter } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
@@ -7,6 +7,9 @@ import "./App.css"
 import { useEffect, useState } from "react"
 import Card from "../Card/Card"
 import Search from "../Search/Search"
+import {BrowserRouter, Routes, Route } from "react-router-dom"
+import ProductDetails from "../ProductDetails/ProductDetails"
+import { Link } from "react-router-dom"
 
 
 export default function App() {
@@ -116,25 +119,31 @@ export default function App() {
             <Search text={searchText} updateText={setSearchText} runSearch={runProductSearch}/>
 
             <Navbar category={selectedCategory} click={setParsedDataFunction} />
+            <Routes>
+              <Route path="/" element={
+                <div className="grid-container">
+                  {parsedData.map((d) => {
+                    
+                      return (
+                      <Card key={d.name}
+                    name={d.name}
+                    image={d.image}
+                    price={d.price}
+                    id={d.id}
+  
+                  />
+                  )
 
-            <div className="grid-container">
+                    
+                  
+  
+                })}
+              </div>
+                } />
+              <Route path="/product/:id" element={<ProductDetails/>} /> 
+            </Routes>
 
-
-
-              {parsedData.map((d) => {
-
-
-                return (<Card key={d.name}
-                  name={d.name}
-                  image={d.image}
-                  price={d.price}
-
-
-
-                />)
-
-              })}
-            </div>
+            
           </div>
         </main>
       </BrowserRouter>

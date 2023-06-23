@@ -2,13 +2,16 @@
 import * as React from "react"
 import "./Card.css"
 import IncrementBtn from "../IncrementBtn/IncrementBtn"
+import { Link } from "react-router-dom";
 
-export function Card({ name, image, price,}) {
+export function Card({ name, image, price, id}) {
     
     
     return (
       <div className="card">
+        <Link key={id} to={`/product/${id}`}>
         <img src={image} style={{ width: '100%', height:"250px" }} />
+        </Link>
         <div className="row">
           <div className="leftcol">
             <p>{name}</p>
