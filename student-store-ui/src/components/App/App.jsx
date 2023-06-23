@@ -11,7 +11,9 @@ import Card from "../Card/Card"
 export default function App() {
   const url = `https://codepath-store-api.herokuapp.com/store`;
   const [data, setData] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("Tech");
+  const [selectedCategory, setSelectedCategory] = useState("All Categories");
+  let allCategories = true;
+  let parsedData;
 
   async function fetchProducts(){
     //console.log("Fetching products")
@@ -37,7 +39,22 @@ export default function App() {
 
   },[])
   
-  
+  const currentProductItems = data.filter ((data)=>{
+    if (data.category=== selectedCategory){
+      return true;
+     }else{
+      return false;
+     }
+  })
+  console.log(currentProductItems);
+
+  if(selectedCategory === "All Categories"){
+    allCategories = true;
+    parsedData = data;
+  }else{
+    allCategories = false;
+    parsedData = currentProductItems;
+  }
 
 
   return (
@@ -58,14 +75,18 @@ export default function App() {
 
           </Navbar>
           <div className="grid-container">
-          {data.map((d)=>{
+            
+
+
+
+          {parsedData.map((d)=>{
             
        
-       return (<Card key={d.name}
-         name={d.name} 
-         image={d.image} 
-         price={d.price}
-         
+            return (<Card key={d.name}
+              name={d.name} 
+              image={d.image} 
+              price={d.price}
+              
          />)
          
 })}

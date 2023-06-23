@@ -25,3 +25,7 @@
   .rightcol{
     flex:25%;
   }
+  .button-card{
+    border-radius: 5px;
+    border-color: greenyellow;
+  }

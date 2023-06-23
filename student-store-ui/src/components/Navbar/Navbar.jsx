@@ -10,13 +10,13 @@ export default function Navbar({category, click}) {
   if(category==="All Categories"){
     allBtn="buttonR active";
     
-  }else if(category==="Clothing"){
+  }else if(category==="clothing"){
     clothBtn="buttonR active"
 
-  }else if(category==="Food"){
+  }else if(category==="food"){
     foodBtn="buttonR active"
 
-  }else if(category==="Accessories"){
+  }else if(category==="accessories"){
     accessoriesBtn="buttonR active"
 
   }else {
@@ -37,10 +37,10 @@ export default function Navbar({category, click}) {
         <ul>
           
         <li><button onClick={() => click("All Categories")} className={allBtn}>All Categories</button></li>
-        <li><button onClick={() => click("Clothing")} className={clothBtn}>Clothing</button></li>
-        <li><button onClick={() => click("Food")} className={foodBtn}>Food</button></li>
-        <li><button onClick={() => click("Accessories")} className={accessoriesBtn}>Accessories</button></li>
-        <li><button onClick={() => click("Tech")} className={techBtn}>Tech</button></li>
+        <li><button onClick={() => click("clothing")} className={clothBtn}>Clothing</button></li>
+        <li><button onClick={() => click("food")} className={foodBtn}>Food</button></li>
+        <li><button onClick={() => click("accessories")} className={accessoriesBtn}>Accessories</button></li>
+        <li><button onClick={() => click("tech")} className={techBtn}>Tech</button></li>
         </ul>
 
         </div>

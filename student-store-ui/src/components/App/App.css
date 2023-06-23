@@ -21,11 +21,12 @@
   justify-content: center;
 }
 
-.grid-item {
+/* .grid-item {
   background-color: #f2f2f2;
   padding: 10px;
   text-align: center;
-}
+} */
 .content{
   margin-left: 80px;
+  margin-right: 80px;
 }
