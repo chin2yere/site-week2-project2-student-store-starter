@@ -10,6 +10,7 @@ import Search from "../Search/Search"
 import {BrowserRouter, Routes, Route } from "react-router-dom"
 import ProductDetails from "../ProductDetails/ProductDetails"
 import { Link } from "react-router-dom"
+import Footer from "../Footer/Footer"
 
 
 export default function App() {
@@ -113,9 +114,10 @@ export default function App() {
             <Sidebar />
 
           </div>
+          <Home />
           <div className="content">
 
-            <Home />
+            
             <Search text={searchText} updateText={setSearchText} runSearch={runProductSearch}/>
 
             <Navbar category={selectedCategory} click={setParsedDataFunction} />
@@ -143,7 +145,7 @@ export default function App() {
               <Route path="/product/:id" element={<ProductDetails/>} /> 
             </Routes>
 
-            
+            <Footer/>
           </div>
         </main>
       </BrowserRouter>

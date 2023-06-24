@@ -9,6 +9,7 @@ export default function Search({text,updateText, runSearch}) {
   return (
     <div className="search">
         <input
+        className="searchBar"
         type="text"
         placeholder="type here"
         value={text}
@@ -16,12 +17,10 @@ export default function Search({text,updateText, runSearch}) {
         
         
         />
-        <button onClick={runSearch}>
+        <button onClick={runSearch} className="searchBarButton">
             Search
         </button>
-        <button>
-            Close
-        </button>
+        
 
         <br></br>
         <br></br>

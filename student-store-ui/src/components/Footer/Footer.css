@@ -1,0 +1,43 @@
+.rowfooter{
+    display:flex;
+    width:100%;
+    height:300px;
+    background-color: #05453cb1;;
+    font-size: 150%;
+
+
+  }
+  
+  .col-leftFooter{
+    flex:75%;
+    text-align: left;
+    padding-top: 30px;
+    margin-left: 10px;
+  
+  }
+  .col-rightFooter{
+    flex:25%;
+    
+    
+  }
+  .imageFooter{
+    width:350px;
+    height:380px;
+  }
+  .happyPersonImage{
+    width:450px;
+    height:450px;
+  }
+  .footerSection{
+    display:flex;
+    width:100%;
+    height:200px;
+    background-color: rgb(242, 232, 232);
+    padding-top: 30px;
+    
+  }
+  .footerColumns{
+    flex:25%;
+    text-align: left;
+    margin-left: 10px;
+  }

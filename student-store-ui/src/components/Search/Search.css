@@ -1,4 +1,13 @@
 .search{
-    size:300%;
+    
     text-align: center;
+    
+}
+.searchBar{
+    width:500px;
+    height:40px;
+}
+.searchBarButton{
+    width:200px;
+    height:40px;
 }

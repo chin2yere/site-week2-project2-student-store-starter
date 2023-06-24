@@ -33,10 +33,13 @@ export default function ProductDetails() {
 
 
   return (
-    
-    <Card name={product.name}
+    <div className="returnedDisplay">
+      <Card name={product.name}
     image={product.image}
     price={product.price}
     />
+
+    </div>
+    
   )
 }
