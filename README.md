@@ -11,6 +11,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Checkout and view the final receipt.
 
 ## *Week 2* Application Features
+<div style="position: relative; padding-bottom: 66.29834254143645%; height: 0;"><iframe src="https://www.loom.com/embed/f71d054167e44b9289e5c21b2ca41a34?sid=92f1a988-9440-4264-b93b-3bd6e581799b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Core Features
 
