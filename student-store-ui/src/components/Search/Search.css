@@ -1,13 +1,11 @@
-.search{
-    
-    text-align: center;
-    
+.search {
+  text-align: center;
 }
-.searchBar{
-    width:500px;
-    height:40px;
+.searchBar {
+  width: 500px;
+  height: 40px;
 }
-.searchBarButton{
-    width:200px;
-    height:40px;
+.searchBarButton {
+  width: 200px;
+  height: 40px;
 }

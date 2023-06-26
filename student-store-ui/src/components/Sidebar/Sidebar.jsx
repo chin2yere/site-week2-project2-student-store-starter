@@ -1,5 +1,5 @@
-import * as React from "react"
-import "./Sidebar.css"
+import * as React from "react";
+import "./Sidebar.css";
 
 export default function Sidebar() {
   return (
@@ -13,9 +13,8 @@ export default function Sidebar() {
         <br></br>
         <br></br>
         <br></br>
-
       </div>
-      
+
       <div className="borderless-button">
         <button className="icon">
           <i className="material-icons md-48">add_shopping_cart</i>
@@ -30,10 +29,7 @@ export default function Sidebar() {
         <button className="icon">
           <i className="material-icons md-48">fact_check</i>
         </button>
-
       </div>
-      
-
     </section>
-  )
+  );
 }

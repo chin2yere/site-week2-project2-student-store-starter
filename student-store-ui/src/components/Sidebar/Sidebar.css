@@ -1,27 +1,22 @@
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50px; /* Adjust the width of the sidebar as needed */
-    height: 100%; /* Make the sidebar cover the full height of the screen */
-    background-color: #05453cb1; /* Set the background color of the sidebar */
-    /* Add any additional styling you desire */
-  }
-  .borderless-button {
-    border: none; /* Remove the default button border */
-    background-color: transparent; /* Set the background color to transparent */
-    padding: 0; /* Remove any padding to minimize space around the button content */
-    text-align: center;
-    
-  }
-  button{
-    background-color: transparent;
-  }
-  .icon{
-    color:white;
-    height:60px;
-  }
-  
-  
-
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px; /* Adjust the width of the sidebar as needed */
+  height: 100%; /* Make the sidebar cover the full height of the screen */
+  background-color: #05453cb1; /* Set the background color of the sidebar */
+  /* Add any additional styling you desire */
+}
+.borderless-button {
+  border: none; /* Remove the default button border */
+  background-color: transparent; /* Set the background color to transparent */
+  padding: 0; /* Remove any padding to minimize space around the button content */
+  text-align: center;
+}
+button {
+  background-color: transparent;
+}
+.icon {
+  color: white;
+  height: 60px;
+}
