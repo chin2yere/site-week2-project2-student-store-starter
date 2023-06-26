@@ -11,20 +11,21 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Checkout and view the final receipt.
 
 ## *Week 2* Application Features
+<div style="position: relative; padding-bottom: 66.29834254143645%; height: 0;"><iframe src="https://www.loom.com/embed/f71d054167e44b9289e5c21b2ca41a34?sid=92f1a988-9440-4264-b93b-3bd6e581799b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Core Features
 
-- [ ] The website displays header, banner, search, product grid, about, contact, and footer section.
-- [ ] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
-- [ ] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
-- [ ] Users can search for products.
-- [ ] User can click on a product in the grid to navigate to a new page containing additional product details.
+- [X] The website displays header, banner, search, product grid, about, contact, and footer section.
+- [X] The website displays the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store) on initial page load.
+- [X] Users can click on a category (clothing, food, etc.) to filter the product grid by type.
+- [X] Users can search for products.
+- [X] User can click on a product in the grid to navigate to a new page containing additional product details.
 
 ### Stretch Features
 
 - [ ] Users can click to expand the shopping cart in the left navigation.
-- [ ] Users can click the '+' button on a product cart to increment that product in the shopping cart.
-- [ ] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
+- [X] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [X] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [ ] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
 
