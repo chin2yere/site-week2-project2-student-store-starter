@@ -1,7 +1,8 @@
 import * as React from "react";
 import "./Sidebar.css";
+import Table from "../Table/Table";
 
-export default function Sidebar({ active, isActive }) {
+export default function Sidebar({ active, isActive, tableArray }) {
   if (isActive === "true") {
     return (
       <section className="sidebar active">
@@ -15,7 +16,7 @@ export default function Sidebar({ active, isActive }) {
           <h3>Shopping Cart</h3>
           <i className="material-icons md-48">add_shopping_cart</i>
 
-          <p>No Items added to cart yet. Start shopping now!</p>
+          <Table tableArray={tableArray}></Table>
           <h3>Payment Info</h3>
           <i className="material-icons md-48">monetization_on</i>
           <form action="submit">

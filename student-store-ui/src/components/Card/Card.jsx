@@ -9,7 +9,6 @@ export function Card({
   image,
   price,
   id,
-  popTable,
   addTable,
   tableArray,
   setTableArray,
@@ -98,7 +97,7 @@ export function Card({
         </div>
         <div className="rightcol">
           <IncrementBtn
-            removeTable={popTable}
+            //removeTable={popTable}
             increaseTable={addTable}
             name={name}
             price={price}

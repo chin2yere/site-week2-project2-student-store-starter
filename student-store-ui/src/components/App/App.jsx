@@ -44,11 +44,7 @@ export default function App() {
     // })
   }, []);
   //table manipulation
-  function popTable() {
-    const TableArray = [...tableArray];
-    TableArray.pop();
-    setTableArray(TableArray);
-  }
+
   function addTable(key, value) {
     //const TableArray = tableArray;
     //TableArray[key] = value;
@@ -111,7 +107,11 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <div>
-            <Sidebar active={setSidebarActive} isActive={sidebarActive} />
+            <Sidebar
+              active={setSidebarActive}
+              isActive={sidebarActive}
+              tableArray={tableArray}
+            />
           </div>
           <Home />
           <div className="content">
@@ -135,7 +135,6 @@ export default function App() {
                           image={d.image}
                           price={d.price}
                           id={d.id}
-                          popTable={popTable}
                           addTable={addTable}
                           tableArray={tableArray}
                           setTableArray={setTableArray}

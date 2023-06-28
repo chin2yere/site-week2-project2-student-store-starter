@@ -2,7 +2,7 @@ import * as React from "react";
 import "./IncrementBtn.css";
 import { useState } from "react";
 export default function IncrementBtn({
-  removeTable,
+  //removeTable,
   increaseTable,
   name,
   price,
@@ -10,16 +10,13 @@ export default function IncrementBtn({
   setTableArray,
 }) {
   const [selectedIncrement, setSelectedIncrement] = useState(0);
-  function updateTable() {
-    const cost = selectedIncrement * price;
-    return [{ name }, { selectedIncrement }, { price }, { cost }];
-  }
+
   function plusBtn() {
     const tempNumber = selectedIncrement + 1;
     setSelectedIncrement(selectedIncrement + 1);
     const keyExists = name in tableArray;
     if (keyExists === true) {
-      const TableArray = tableArray;
+      const TableArray = { ...tableArray };
       TableArray[name][0] += 1;
       setTableArray(TableArray);
     } else {
@@ -31,7 +28,7 @@ export default function IncrementBtn({
     setSelectedIncrement(selectedIncrement - 1);
     const keyExists = name in tableArray;
     if (keyExists === true) {
-      const TableArray = tableArray;
+      const TableArray = { ...tableArray };
       TableArray[name][0] -= 1;
       setTableArray(TableArray);
       //console.log(tableArray);
