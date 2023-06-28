@@ -27,9 +27,9 @@ li button {
 .buttonR {
   width: 180px; /* Increase the width of the button */
   height: 50px; /* Increase the height of the button */
-  will-change: transform;
+  /* will-change: transform;
   transition: transform 0.2s ease;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; */
   background-color: #65b0a6b1;
 }
 .buttonR:active {

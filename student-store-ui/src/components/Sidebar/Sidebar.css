@@ -4,7 +4,7 @@
   left: 0;
   width: 50px; /* Adjust the width of the sidebar as needed */
   height: 100%; /* Make the sidebar cover the full height of the screen */
-  background-color: #05453cb1; /* Set the background color of the sidebar */
+  background-color: #05453dfa; /* Set the background color of the sidebar */
   /* Add any additional styling you desire */
 }
 .borderless-button {
@@ -19,4 +19,27 @@ button {
 .icon {
   color: white;
   height: 60px;
+}
+.sidebar.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 450px; /* Adjust the width of the sidebar as needed */
+  height: 100%; /* Make the sidebar cover the full height of the screen */
+  background-color: #05453dfa;
+}
+.checkoutInformation {
+  text-align: center;
+  color: white;
+}
+.rowSidebar {
+  display: flex;
+  position: center;
+  color: white;
+}
+.checkoutButton {
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
 }

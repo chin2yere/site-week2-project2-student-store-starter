@@ -4,7 +4,16 @@ import "./Card.css";
 import IncrementBtn from "../IncrementBtn/IncrementBtn";
 import { Link } from "react-router-dom";
 
-export function Card({ name, image, price, id }) {
+export function Card({
+  name,
+  image,
+  price,
+  id,
+  popTable,
+  addTable,
+  tableArray,
+  setTableArray,
+}) {
   return (
     <div className="card">
       <Link key={id} to={`/product/${id}`}>
@@ -88,18 +97,14 @@ export function Card({ name, image, price, id }) {
           <p>${price}</p>
         </div>
         <div className="rightcol">
-          {/* <div className="row">
-                <button onClick={() => quantity(numberOfProducts+1)}className="button-card">
-                    <i className="material-icons">add</i>
-
-                </button>
-                <button onClick={(a=no-1) => quantity(numberOfProducts-1)}className="button-card">
-                    <i className="material-icons">remove</i>
-
-                </button>
-
-            </div> */}
-          <IncrementBtn />
+          <IncrementBtn
+            removeTable={popTable}
+            increaseTable={addTable}
+            name={name}
+            price={price}
+            tableArray={tableArray}
+            setTableArray={setTableArray}
+          />
         </div>
       </div>
     </div>

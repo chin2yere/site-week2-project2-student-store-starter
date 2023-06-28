@@ -9,7 +9,7 @@ export default function Home() {
           <div className="col-left1">
             <img src="https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg" />
           </div>
-          <div className="col-left2" style={{ width: "80px", height: "250px" }}>
+          {/* <div className="col-left2" style={{ width: "80px", height: "250px" }}>
             <div className="socials">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path
@@ -36,29 +36,21 @@ export default function Home() {
                 ></path>
               </svg>
             </div>
-          </div>
+          </div> */}
           <div className="col-right">
             <div className="links">
               <ul>
                 <li>
-                  <button onClick="#" className="button">
-                    Home
-                  </button>
+                  <button className="button">Home</button>
                 </li>
                 <li>
-                  <button onClick="#" className="button">
-                    About Us
-                  </button>
+                  <button className="button">About Us</button>
                 </li>
                 <li>
-                  <button onClick="#" className="button">
-                    Contact Us
-                  </button>
+                  <button className="button">Contact Us</button>
                 </li>
                 <li>
-                  <button onClick="#" className="button">
-                    Buy Now
-                  </button>
+                  <button className="button">Buy Now</button>
                 </li>
               </ul>
             </div>

@@ -18,6 +18,9 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [searchText, setSearchText] = useState("");
   const [parsedData, setParsedData] = useState([]);
+  const [sidebarActive, setSidebarActive] = useState("false");
+  const [tableArray, setTableArray] = useState({});
+
   //const [parsedData, setParsedData] = useState(null);
   let allCategories = true;
   //let parsedData;
@@ -40,6 +43,18 @@ export default function App() {
     //   <p>category</p>
     // })
   }, []);
+  //table manipulation
+  function popTable() {
+    const TableArray = [...tableArray];
+    TableArray.pop();
+    setTableArray(TableArray);
+  }
+  function addTable(key, value) {
+    //const TableArray = tableArray;
+    //TableArray[key] = value;
+    setTableArray({ ...tableArray, [key]: value });
+    // console.log(tableArray);
+  }
   function setParsedDataFunction(categoryClicked) {
     const currentProductItems = data.filter((data) => {
       if (data.category === categoryClicked) {
@@ -88,15 +103,15 @@ export default function App() {
     //console.log("end of run product search",searchText);
   }
   //console.log("outside function",searchText);
-  console.log(parsedData);
-
+  //console.log(parsedData);
+  console.log(tableArray);
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
           <div>
-            <Sidebar />
+            <Sidebar active={setSidebarActive} isActive={sidebarActive} />
           </div>
           <Home />
           <div className="content">
@@ -120,6 +135,10 @@ export default function App() {
                           image={d.image}
                           price={d.price}
                           id={d.id}
+                          popTable={popTable}
+                          addTable={addTable}
+                          tableArray={tableArray}
+                          setTableArray={setTableArray}
                         />
                       );
                     })}
