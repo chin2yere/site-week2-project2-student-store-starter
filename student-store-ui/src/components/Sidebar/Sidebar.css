@@ -27,6 +27,7 @@ button {
   width: 450px; /* Adjust the width of the sidebar as needed */
   height: 100%; /* Make the sidebar cover the full height of the screen */
   background-color: #05453dfa;
+  overflow: auto;
 }
 .checkoutInformation {
   text-align: center;
