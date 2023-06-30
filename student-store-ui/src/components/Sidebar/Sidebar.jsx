@@ -6,16 +6,13 @@ import { useState } from "react";
 export default function Sidebar({ active, isActive, tableArray }) {
   const [customerName, setCustomerName] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
-  //let errorMessage = "";
-  //let defaultReceipt =
-  //  "A confirmation email will be sent to you so that you can confirm this \n order. Once you have confirmed the order, it will be delivered to your \n dorm room.";
-  //let receipt="A confirmation email will be sent to you so that you can confirm this \n order. Once you have confirmed the order, it will be delivered to your \n dorm room.";
-  //let receipt = "";
-  const [receipt, setReceipt] = useState("");
+  const [receipt, setReceipt] = useState([]);
   const [defaultReceipt, setDefaultReceipt] = useState(
     "A confirmation email will be sent to you so that you can confirm this \n order. Once you have confirmed the order, it will be delivered to your \n dorm room."
   );
   const [errorMessage, setErrorMessage] = useState("");
+
+  console.log("receipt", receipt);
 
   function checkoutOnclick(event) {
     event.preventDefault();
@@ -23,36 +20,49 @@ export default function Sidebar({ active, isActive, tableArray }) {
 
     if (
       Object.keys(tableArray).length === 0 ||
-      Object.values(tableArray).every((value) => value[0] === 0)
+      Object.values(tableArray).every((value) => value[0] === 0) ||
+      customerName === "" ||
+      customerEmail === ""
     ) {
-      setErrorMessage("No cart or Items in cart found to check out");
-      const receipt1 =
-        "A confirmation email will be sent to you so that you can confirm this \n order. Once you have confirmed the order, it will be delivered to your \n dorm room.";
+      setErrorMessage("Cart empty or form not filled");
+      const receipt1 = [
+        "A confirmation email will be sent to you so that you can confirm this \n order. Once you have confirmed the order, it will be delivered to your \n dorm room.",
+      ];
       setReceipt(receipt1);
     } else {
       setErrorMessage("");
 
-      let tempReceipt = `Receipt\n showing receipts for ${customerName} available at ${customerEmail}`;
+      let newReceipt = [...receipt];
+
+      let tempReceipt = `showing receipts for ${customerName} available at ${customerEmail}`;
+      console.log("tempReceipt", tempReceipt);
+
+      newReceipt.push(tempReceipt);
       let total = 0;
       //let name, price, number;
       Object.entries(tableArray).map(([key, value]) => {
         if (value[0] !== 0) {
-          tempReceipt += `\n${value[0]} total ${key} purchased at a cost of ${
+          tempReceipt = `${value[0]} total ${key} purchased at a cost of ${
             value[1]
           } for a total cost of ${(
             parseFloat(value[0]) * parseFloat(value[1])
           ).toFixed(2)}\n`;
           total += (parseFloat(value[0]) * parseFloat(value[1])).toFixed(2);
+
+          console.log("tempReceipt", tempReceipt);
+          newReceipt.push(tempReceipt);
         }
       });
-      setReceipt(tempReceipt);
+      setReceipt(newReceipt);
     }
     console.log(receipt);
   }
-  function convertStringToParagraph(inputString) {
-    var convertedString = inputString.replace(/\n/g, "<br>");
-    return "<p>" + convertedString + "</p>";
+  function printreceipt() {
+    receipt.map((d) => {
+      return <p>{d}</p>;
+    });
   }
+
   if (isActive === "true") {
     return (
       <section className="sidebar active">
@@ -69,7 +79,7 @@ export default function Sidebar({ active, isActive, tableArray }) {
           <Table tableArray={tableArray}></Table>
           <h3>Payment Info</h3>
           <i className="material-icons md-48">monetization_on</i>
-          <form>
+          <form action="submit">
             <div className="rowSidebar">
               <label htmlFor="input-field">Name:</label>&nbsp;&nbsp;
               <input
@@ -103,8 +113,9 @@ export default function Sidebar({ active, isActive, tableArray }) {
               <label htmlFor="myCheckbox">
                 I agree to the terms and conditions
               </label>
-              <p>{errorMessage}</p>
+              <br />
             </div>
+            <p style={{ color: "red" }}>{errorMessage}</p>
             <br />
             <div className="rowSidebar">
               <button
@@ -117,7 +128,14 @@ export default function Sidebar({ active, isActive, tableArray }) {
           </form>
           <h3>Checkout Info</h3>
           <p>{defaultReceipt}</p>
-          <p>{receipt}</p>
+          <p>{receipt && "Receipt"}</p>
+
+          <div>
+            {receipt &&
+              receipt.map((d) => {
+                return <p key={d}>{d}</p>;
+              })}
+          </div>
         </div>
       </section>
     );
