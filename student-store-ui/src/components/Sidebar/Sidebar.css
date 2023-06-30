@@ -2,15 +2,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 50px; /* Adjust the width of the sidebar as needed */
-  height: 100%; /* Make the sidebar cover the full height of the screen */
-  background-color: #05453dfa; /* Set the background color of the sidebar */
-  /* Add any additional styling you desire */
+  width: 50px;
+  height: 100%;
+  background-color: #05453dfa;
 }
 .borderless-button {
-  border: none; /* Remove the default button border */
-  background-color: transparent; /* Set the background color to transparent */
-  padding: 0; /* Remove any padding to minimize space around the button content */
+  border: none;
+  background-color: transparent;
+  padding: 0;
   text-align: center;
 }
 button {
@@ -24,8 +23,8 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 450px; /* Adjust the width of the sidebar as needed */
-  height: 100%; /* Make the sidebar cover the full height of the screen */
+  width: 450px;
+  height: 100%;
   background-color: #05453dfa;
   overflow: auto;
 }

@@ -2,44 +2,36 @@ import * as React from "react";
 import "./IncrementBtn.css";
 import { useState } from "react";
 export default function IncrementBtn({
-  //removeTable,
   increaseTable,
   name,
   price,
   tableArray,
   setTableArray,
 }) {
-  const [selectedIncrement, setSelectedIncrement] = useState(0);
-
   function plusBtn() {
-    const tempNumber = selectedIncrement + 1;
-    setSelectedIncrement(selectedIncrement + 1);
     const keyExists = name in tableArray;
     if (keyExists === true) {
       const TableArray = { ...tableArray };
       TableArray[name][0] += 1;
       setTableArray(TableArray);
     } else {
-      increaseTable(name, [tempNumber, price]);
+      increaseTable(name, [1, price]);
     }
   }
   function minusBtn() {
-    const tempNumber = selectedIncrement - 1;
-    setSelectedIncrement(selectedIncrement - 1);
     const keyExists = name in tableArray;
     if (keyExists === true) {
       const TableArray = { ...tableArray };
       TableArray[name][0] -= 1;
       setTableArray(TableArray);
-      //console.log(tableArray);
     }
   }
 
   function selectedIncrementValue() {
-    if (selectedIncrement <= 0) {
+    if (!tableArray[name] || tableArray[name][0] <= 0) {
       return "";
     } else {
-      return selectedIncrement;
+      return tableArray[name][0];
     }
   }
 
@@ -51,7 +43,7 @@ export default function IncrementBtn({
         </button>
         <button
           onClick={() => {
-            if (selectedIncrement != 0) {
+            if (tableArray[name] && tableArray[name][0] != 0) {
               minusBtn();
             }
           }}

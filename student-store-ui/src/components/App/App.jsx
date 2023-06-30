@@ -1,5 +1,5 @@
 import * as React from "react";
-//import { BrowserRouter } from 'react-router-dom'
+
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
@@ -21,35 +21,22 @@ export default function App() {
   const [sidebarActive, setSidebarActive] = useState("false");
   const [tableArray, setTableArray] = useState({});
 
-  //const [parsedData, setParsedData] = useState(null);
   let allCategories = true;
-  //let parsedData;
 
   async function fetchProducts() {
-    //console.log("Fetching products")
     const response = await fetch(url);
     let existingData = await response.json();
     existingData = existingData.products;
     setData(existingData);
     setParsedData(existingData);
-    //images = data.results;
-    //console.log(existingData);
   }
-  // const { data, name, category, price, image } = Dataset.createDataSet();
 
   useEffect(() => {
     fetchProducts();
-    // category.map((category)=>{
-    //   <p>category</p>
-    // })
   }, []);
-  //table manipulation
 
   function addTable(key, value) {
-    //const TableArray = tableArray;
-    //TableArray[key] = value;
     setTableArray({ ...tableArray, [key]: value });
-    // console.log(tableArray);
   }
   function setParsedDataFunction(categoryClicked) {
     const currentProductItems = data.filter((data) => {
@@ -59,47 +46,33 @@ export default function App() {
         return false;
       }
     });
-    // //console.log(currentProductItems);
 
     if (categoryClicked === "All Categories") {
       allCategories = true;
-      //parsedData= data;
+
       setParsedData(data);
     } else {
       allCategories = false;
-      //parsedData = currentProductItems;
+
       setParsedData(currentProductItems);
     }
     setSelectedCategory(categoryClicked);
   }
 
-  // function click(categoryClicked) {
-  //   setParsedDataFunction(categoryClicked);
-  //   //setSelectedCategory(x);
-
-  // }
-
   function runProductSearch() {
-    //console.log("run product search");
     if (searchText != "") {
-      //console.log("search text is not empty");
       const newData = parsedData.filter((data) => {
-        //console.log({data,"condition: ":data.name.includes(searchText)});
         if (data.name.toLowerCase().includes(searchText)) {
           return true;
         } else {
           return false;
         }
-
-        //return item.name.toLowerCase().includes({searchText});
       });
       console.log(parsedData);
       setParsedData(newData);
     }
-    //console.log("end of run product search",searchText);
   }
-  //console.log("outside function",searchText);
-  //console.log(parsedData);
+
   console.log(tableArray);
   return (
     <div className="app">
@@ -111,6 +84,7 @@ export default function App() {
               active={setSidebarActive}
               isActive={sidebarActive}
               tableArray={tableArray}
+              setTableArray={setTableArray}
             />
           </div>
           <Home />

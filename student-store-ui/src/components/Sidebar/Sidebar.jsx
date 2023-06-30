@@ -3,7 +3,12 @@ import "./Sidebar.css";
 import Table from "../Table/Table";
 import { useState } from "react";
 
-export default function Sidebar({ active, isActive, tableArray }) {
+export default function Sidebar({
+  active,
+  isActive,
+  tableArray,
+  setTableArray,
+}) {
   const [customerName, setCustomerName] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
   const [receipt, setReceipt] = useState([]);
@@ -17,6 +22,7 @@ export default function Sidebar({ active, isActive, tableArray }) {
   function checkoutOnclick(event) {
     event.preventDefault();
     setDefaultReceipt("");
+    setTableArray({});
 
     if (
       Object.keys(tableArray).length === 0 ||
@@ -39,7 +45,7 @@ export default function Sidebar({ active, isActive, tableArray }) {
 
       newReceipt.push(tempReceipt);
       let total = 0;
-      //let name, price, number;
+
       Object.entries(tableArray).map(([key, value]) => {
         if (value[0] !== 0) {
           tempReceipt = `${value[0]} total ${key} purchased at a cost of ${

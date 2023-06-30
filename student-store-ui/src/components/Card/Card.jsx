@@ -1,4 +1,3 @@
-//import IncrementBtn from "../IncrementBtn/IncrementBtn";
 import * as React from "react";
 import "./Card.css";
 import IncrementBtn from "../IncrementBtn/IncrementBtn";
@@ -97,7 +96,6 @@ export function Card({
         </div>
         <div className="rightcol">
           <IncrementBtn
-            //removeTable={popTable}
             increaseTable={addTable}
             name={name}
             price={price}
