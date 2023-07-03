@@ -11,6 +11,7 @@ export function Card({
   addTable,
   tableArray,
   setTableArray,
+  showIncrement = true,
 }) {
   return (
     <div className="card">
@@ -95,13 +96,15 @@ export function Card({
           <p>${price}</p>
         </div>
         <div className="rightcol">
-          <IncrementBtn
-            increaseTable={addTable}
-            name={name}
-            price={price}
-            tableArray={tableArray}
-            setTableArray={setTableArray}
-          />
+          {showIncrement && (
+            <IncrementBtn
+              increaseTable={addTable}
+              name={name}
+              price={price}
+              tableArray={tableArray}
+              setTableArray={setTableArray}
+            />
+          )}
         </div>
       </div>
     </div>

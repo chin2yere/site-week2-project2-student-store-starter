@@ -28,7 +28,7 @@ export default function IncrementBtn({
   }
 
   function selectedIncrementValue() {
-    if (!tableArray[name] || tableArray[name][0] <= 0) {
+    if (!tableArray || !tableArray[name] || tableArray[name][0] <= 0) {
       return "";
     } else {
       return tableArray[name][0];

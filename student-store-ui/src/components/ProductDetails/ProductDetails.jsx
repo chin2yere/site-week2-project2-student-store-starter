@@ -22,7 +22,12 @@ export default function ProductDetails() {
 
   return (
     <div className="returnedDisplay">
-      <Card name={product.name} image={product.image} price={product.price} />
+      <Card
+        name={product.name}
+        image={product.image}
+        price={product.price}
+        showIncrement={false}
+      />
     </div>
   );
 }
